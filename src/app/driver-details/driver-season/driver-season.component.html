@@ -1,0 +1,46 @@
+<div class="template-frame">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="list-group-item clearfix list-header">Formula 1 {{ this.year }} Results</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div *ngIf="driverSeason">
+        <div class="list-group-item clearfix column-header">
+          <div class="row">
+            <div class="col-xs-2" (click)="sortData('round')">
+              <span>Round </span>
+              <i class="material-icons sort-icon">{{ getSortIcon('round') }}</i>
+            </div>
+            <div class="col-xs-4" (click)="sortData('grandPrix')">
+              <span>Grand Prix </span>
+              <i class="material-icons sort-icon">{{ getSortIcon('grandPrix') }}</i>
+            </div>
+            <div class="col-xs-2" (click)="sortData('team')">
+              <span>Team </span>
+              <i class="material-icons sort-icon">{{ getSortIcon('team') }}</i>
+            </div>
+            <div class="col-xs-2" (click)="sortData('grid')">
+              <span>Grid </span>
+              <i class="material-icons sort-icon">{{ getSortIcon('grid') }}</i>
+            </div>
+            <div class="col-xs-2" (click)="sortData('race')">
+              <span>Race </span>
+              <i class="material-icons sort-icon">{{ getSortIcon('race') }}</i>
+            </div>
+          </div>
+        </div>
+        <div class="list-group-item clearfix" *ngFor="let race of driverSeason">
+          <div class="row">
+            <div class="col-xs-2">{{ race.round }}</div>
+            <div class="col-xs-4">{{ race.grandPrix }}</div>
+            <div class="col-xs-2">{{ race.team }}</div>
+            <div class="col-xs-2">{{ race.grid }}</div>
+            <div class="col-xs-2">{{ race.race }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

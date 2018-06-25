@@ -1,0 +1,22 @@
+.template-frame {
+  padding: 20px;
+  background-color: #555;
+  font-size: large;
+}
+
+.list-header {
+  font-weight: bold;
+  background-color: #aaa;
+  border: 0;
+}
+
+.column-header {
+  font-weight: bold;
+  background-color: #bbb;
+  border: 0;
+  cursor: pointer;
+}
+
+.sort-icon {
+  vertical-align: bottom;
+}

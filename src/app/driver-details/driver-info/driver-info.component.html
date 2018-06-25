@@ -1,0 +1,27 @@
+<div *ngIf="driverInfo" class="bio">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>{{ driverInfo.name }}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">Country:</div>
+    <div class="col-xs-6">{{ driverInfo.nationality }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">Team:</div>
+    <div class="col-xs-6">{{ driverInfo.team }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">Birth:</div>
+    <div class="col-xs-6">{{ driverInfo.birthDate }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">Biography:</div>
+    <div class="col-xs-6">
+      <a [href]="driverInfo.bioUrl" target="_blank">
+        <i class="material-icons">link</i>
+      </a>
+    </div>
+  </div>
+</div>

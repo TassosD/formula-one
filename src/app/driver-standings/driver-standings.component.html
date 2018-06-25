@@ -1,0 +1,38 @@
+<div class="row" *ngIf="standings">
+  <div class="col-xs-4">
+    <div class="list-group-item clearfix search-row">
+      <input type="text" class="form-control" [(ngModel)]="searchString" (keyup)="onSearchChange()">
+      <div class="search-row find-icon-div">
+        <i class="material-icons">find_in_page</i>
+      </div>
+    </div>
+    <div class="template-frame">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="list-group-item clearfix list-header">Drivers Championship Standings - {{ this.year }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <a
+            (click)="onSelectDriver(standing)"
+            class="list-group-item clearfix"
+            style="cursor: pointer"
+            *ngFor="let standing of filterStandings"
+          >
+            <div class="row">
+              <div class="col-xs-1">{{ standing.position }}</div>
+              <div class="col-xs-6">{{ standing.driver }}</div>
+              <div class="col-xs-3">{{ standing.factory }}</div>
+              <div class="col-xs-2 text-right">{{ standing.points }}</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
